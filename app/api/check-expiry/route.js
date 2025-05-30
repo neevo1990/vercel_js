@@ -5,10 +5,18 @@ import { createClient } from '@supabase/supabase-js';
 import { Resend } from 'resend';
 import { format, addDays } from 'date-fns';
 
-const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY);
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Validate incoming requests (cron only)
+export async function GET(req) {
+  const authHeader = req.headers.get('Authorization');
+  const expected = `Bearer ${process.env.CRON_SECRET}`;
 
-export async function GET() {
+  if (authHeader !== expected) {
+    return new Response('Unauthorized', { status: 401 });
+  }
+
+  const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY);
+  const resend = new Resend(process.env.RESEND_API_KEY);
+
   const today = format(new Date(), 'yyyy-MM-dd');
   const inFiveDays = format(addDays(new Date(), 5), 'yyyy-MM-dd');
 
