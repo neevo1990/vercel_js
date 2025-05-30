@@ -2,6 +2,7 @@
   "name": "data-dni-y-reconocimiento-server-js",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "data_dni_rm.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
