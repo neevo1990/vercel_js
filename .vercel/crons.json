@@ -1,1 +1,6 @@
-'[{ "path": "/api/check-expiry", "schedule": "* * * * *" }]' 
+﻿[
+  {
+    "path": "/api/check-expiry",
+    "schedule": "* * * * *"
+  }
+]
