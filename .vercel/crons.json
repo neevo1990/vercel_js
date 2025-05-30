@@ -1,0 +1,6 @@
+[
+  {
+    "path": "/api/check-expiry",
+    "schedule": "* * * * *"
+  }
+]
