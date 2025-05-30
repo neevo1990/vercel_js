@@ -1,0 +1,19 @@
+{
+  "name": "data-dni-y-reconocimiento-server-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "data_dni_rm.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.8",
+    "date-fns": "^4.1.0",
+    "dotenv": "^16.5.0",
+    "resend": "^4.5.1"
+  }
+}
